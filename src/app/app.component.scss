@@ -1,3 +1,32 @@
+.noneSelected{
+  cursor: pointer;
+  border:none ; 
+  }
+
+  .selectedF{
+    cursor: pointer;
+    border-style: solid;
+    border-width: 2px;
+    border-color:aqua; 
+   }
+
+   .black{
+    background-color: black;
+   }
+   .gray{
+    background-color: gray;
+   }
+   .light{
+    background-color: rgb(245, 239, 239);
+   }
+   .custDiv{
+    width: 35px;
+    height: 35px;
+    border-radius: 40%;
+   }
+.yallow{
+  background-color: #ffd534;
+}
 ion-menu ion-content {
   --background: var(--ion-item-background, var(--ion-background-color, #fff));
 }

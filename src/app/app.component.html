@@ -5,13 +5,31 @@
         <ion-list id="inbox-list">
           <ion-list-header>Inbox</ion-list-header>
           <ion-note>hi@ionicframework.com</ion-note>
+          <ion-grid >
+             <!-- <ion-row>
+            <ion-item lines="none">
+              <ion-toggle (ionChange)="onClick($event)" slot="end"></ion-toggle>
+            </ion-item>
 
+            <ion-item lines="none">
+              <ion-checkbox (ionChange)="checkhange($event)" slot="end" value="gr"></ion-checkbox>
+            </ion-item>
+          </ion-row> --> 
+             <ion-row>   
+                  <div (click)="filter('black')" class="ion-padding black custDiv" [ngClass]="{'selectedF': selectedIdx == 'black' , 'noneSelected': selectedIdx !='black' }"><ion-text></ion-text></div>
+                  <div (click)="filter('gray')" class="ion-padding gray custDiv" [ngClass]="{'selectedF': selectedIdx == 'gray' , 'noneSelected': selectedIdx !='gray' }"> <ion-text></ion-text></div>
+                  <div (click)="filter('light')" class="ion-padding light custDiv" [ngClass]="{'selectedF': selectedIdx == 'light' , 'noneSelected': selectedIdx !='light' }"> <ion-text></ion-text></div>
+                  <div (click)="filter('yallow')" class="ion-padding yallow custDiv" [ngClass]="{'selectedF': selectedIdx == 'yallow' , 'noneSelected': selectedIdx !='yallow' }"> <ion-text></ion-text></div>
+             </ion-row>
+          </ion-grid>
+         
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
+        
         </ion-list>
 
         <ion-list id="labels-list">
